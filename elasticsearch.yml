@@ -28,7 +28,7 @@
 # Cluster name identifies your cluster for auto-discovery. If you're running
 # multiple clusters on the same network, make sure you're using unique names.
 #
-cluster.name: pi-es
+cluster.name: ${ES_CLUSTER}
 
 
 #################################### Node #####################################
@@ -36,18 +36,18 @@ cluster.name: pi-es
 # Node names are generated dynamically on startup, so you're relieved
 # from configuring them manually. You can tie this node to a specific name:
 #
-node.name: es5b
+node.name: ${ES_NODE}
 
 # Every node can be configured to allow or deny being eligible as the master,
 # and to allow or deny to store the data.
 #
 # Allow this node to be eligible as a master node (enabled by default):
 #
-node.master: false
+node.master: ${ES_IS_MASTER}
 #
 # Allow this node to store data (enabled by default):
 #
-node.data: false
+node.data: ${ES_IS_DATA}
 
 # You can exploit these settings to design advanced cluster topologies.
 #
@@ -139,11 +139,11 @@ index.number_of_replicas: 1
 
 # Path to directory containing configuration (this file and logging.yml):
 #
-# path.conf: /path/to/conf
+path.conf: /usr/share/elasticsearch/config
 
 # Path to directory where to store index data allocated for this node.
 #
-# path.data: /path/to/data
+path.data: /usr/share/elasticsearch/data
 #
 # Can optionally include more than one location, causing data to be striped across
 # the locations (a la RAID 0) on a file level, favouring locations with most free
@@ -157,7 +157,7 @@ index.number_of_replicas: 1
 
 # Path to log files:
 #
-# path.logs: /path/to/logs
+path.logs: /usr/share/elasticsearch/logs
 
 # Path to where plugins are installed:
 #
@@ -206,7 +206,7 @@ index.number_of_replicas: 1
 
 # Set both 'bind_host' and 'publish_host':
 #
-# network.host: 192.168.0.1
+network.host: 0.0.0.0
 
 # Set a custom port for the node to node communication (9300 by default):
 #
