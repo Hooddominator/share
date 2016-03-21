@@ -11,6 +11,8 @@ mv logstash-${LGSTVER}/* .;
 rm -rf logstash-${LGSTVER}*;
 mkdir /usr/share/logstash/logs;
 mkdir /usr/share/logstash/config;
+cd /usr/share/logstash/config;
+wget https://raw.githubusercontent.com/Hooddominator/share/master/logstash.conf;
 chown -R elasticsearch:elasticsearch /usr/share/logstash/;
 cd /etc/supervisor/conf.d/;
 wget https://raw.githubusercontent.com/Hooddominator/share/master/supervisor_logstash.conf;
