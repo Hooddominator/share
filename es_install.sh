@@ -8,7 +8,7 @@ mkdir /usr/share/elasticsearch;
 cd /usr/share/elasticsearch;
 wget "https://download.elasticsearch.org/elasticsearch/release/org/elasticsearch/distribution/tar/elasticsearch/${ESVER}/elasticsearch-${ESVER}.tar.gz";
 sleep 1;
-tar -zxvf elasticsearch-${ESVER}.tar.gz;
+tar -xvzf elasticsearch-${ESVER}.tar.gz;
 sleep 1;
 mv ./elasticsearch-${ESVER}/* .;
 rm -rf ./elasticsearch-${ESVER}*;
