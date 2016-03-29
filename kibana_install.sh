@@ -9,8 +9,11 @@ mkdir /usr/share/kibana
 mkdir /usr/share/kibana/logs
 cd /usr/share/kibana
 wget https://download.elastic.co/kibana/kibana/kibana-${KIBANAVER}-linux-x86.tar.gz
+sleep 1
 tar -zxvf kibana-${KIBANAVER}-linux-x86.tar.gz
+sleep 1
 mv kibana-${KIBANAVER}-linux-x86/* .
+sleep 1
 rm -rf kibana-${KIBANAVER}-linux-x86*
 mv node/bin/node node/bin/xnode
 mv node/bin/npm node/bin/xnpm
