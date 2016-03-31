@@ -1,6 +1,6 @@
 #!/bin/bash
 ## installs logstash on RPi
-LGSTVER="2.2.0";
+LGSTVER="2.3.0";
 
 mkdir /usr/share/logstash;
 cd /usr/share/logstash;
