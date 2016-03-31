@@ -1,0 +1,104 @@
+{
+    "mappings": {
+        "_default_": {
+            "_all": {
+                "norms": false
+            },
+            "dynamic_templates": [
+                {
+                    "template1": {
+                        "mapping": {
+                            "doc_values": true,
+                            "ignore_above": 1024,
+                            "index": true,
+                            "type": "keyword"
+                        },
+                        "match_mapping_type": "string"
+                    }
+                }
+            ],
+            "properties": {
+                "@timestamp": {
+                    "type": "date"
+                },
+                "id": {
+                    "type": "text",
+                    "norms": false
+                },
+                "uid": {
+                    "type": "text",
+                    "norms": false
+                },
+                "browser": {
+                    "type": "text",
+                    "norms": false
+                },
+                "os": {
+                    "type": "text",
+                    "norms": false
+                },
+                "device": {
+                    "type": "text",
+                    "norms": false
+                },
+                "area": {
+                    "type": "text",
+                    "norms": false
+                },
+                "scope": {
+                    "type": "text",
+                    "norms": false
+                },
+                "pool": {
+                    "type": "text",
+                    "norms": false
+                },
+                "split": {
+                    "type": "text",
+                    "norms": false
+                },
+                "origin": {
+                    "type": "text",
+                    "norms": false
+                },
+                "childs": {
+                    "type": "integer"
+                },
+                "duration": {
+                    "type": "integer"
+                },
+                "redirect": {
+                    "type": "integer"
+                },
+                "appcache": {
+                    "type": "integer"
+                },
+                "dns": {
+                    "type": "integer"
+                },
+                "tcp": {
+                    "type": "integer"
+                },
+                "request": {
+                    "type": "integer"
+                },
+                "response": {
+                    "type": "integer"
+                },
+                "dom": {
+                    "type": "integer"
+                },
+                "loadEvent": {
+                    "type": "integer"
+                },
+                "time": {
+                    "type": "date"
+                }
+            }
+        }
+    },
+    "settings": {
+        "index.refresh_interval": "5s"
+    },
+    "template": "http-input-*"
+}
