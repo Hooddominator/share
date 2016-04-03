@@ -24,6 +24,7 @@ ant jar
 mv /usr/share/logstash/vendor/jruby/lib/jni/arm-Linux/libjffi-1.2.so /usr/share/logstash/vendor/jruby/lib/jni/arm-Linux/libjffi-1.2.so.x;
 cp /tmp/jffi/build/jni/libjffi-1.2.so /usr/share/logstash/vendor/jruby/lib/jni/arm-Linux/
 chown -R elasticsearch:elasticsearch /usr/share/logstash/
+/usr/share/logstash/bin/logstash-plugin install logstash-input-http
 cd /etc/supervisor/conf.d/
 wget https://raw.githubusercontent.com/Hooddominator/share/master/supervisor_logstash.conf;
 supervisorctl reread;
