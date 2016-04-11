@@ -1,12 +1,14 @@
 #!/bin/bash
 ## installs logstash on RPi
 ## 
-LGSTVER="2.3.0";
+LGSTVER="2.3.1";
 
 aptitude install -y git openjdk-8-jdk ant;
 mkdir /usr/share/logstash;
 cd /usr/share/logstash;
-wget https://download.elastic.co/logstash/logstash/logstash-${LGSTVER}.tar.gz;
+##wget https://download.elastic.co/logstash/logstash/logstash-${LGSTVER}.tar.gz;
+## install plugins manually is ultra slow, so fuckoff and gotta catch'em all by load a 'all-plugins' package
+wget https://download.elastic.co/logstash/logstash/logstash-all-plugins-2.3.1.tar.gz
 sleep 1;
 tar -zxvf logstash-${LGSTVER}.tar.gz;
 sleep 1;
