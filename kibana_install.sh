@@ -1,20 +1,22 @@
 #!/bin/bash
 ## installs kibana on RPi
 
-KIBANAVER="4.4.1"
+KIBANAVER="4.5.0"
+OSARCH="linux-x64"
 
 curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
 apt-get install -y nodejs
 mkdir /usr/share/kibana
 mkdir /usr/share/kibana/logs
 cd /usr/share/kibana
-wget https://download.elastic.co/kibana/kibana/kibana-${KIBANAVER}-linux-x86.tar.gz
+##wget https://download.elastic.co/kibana/kibana/kibana-${KIBANAVER}-linux-x86.tar.gz
+wget https://download.elastic.co/kibana/kibana/kibana-${KIBANAVER}-${OSARCH}.tar.gz
 sleep 1
-tar -zxvf kibana-${KIBANAVER}-linux-x86.tar.gz
+tar -zxvf kibana-${KIBANAVER}-${OSARCH}.tar.gz
 sleep 1
-mv kibana-${KIBANAVER}-linux-x86/* .
+mv kibana-${KIBANAVER}-${OSARCH}/* .
 sleep 1
-rm -rf kibana-${KIBANAVER}-linux-x86*
+rm -rf kibana-${KIBANAVER}-${OSARCH}*
 mv node/bin/node node/bin/xnode
 mv node/bin/npm node/bin/xnpm
 ln -s /usr/bin/node node/bin/node
