@@ -1,7 +1,7 @@
 #!/bin/bash
 ## installs logstash on RPi
 ## 
-LGSTVER="2.3.1";
+LGSTVER="2.3.3";
 ALLPLUG="all-plugins-"
 
 
