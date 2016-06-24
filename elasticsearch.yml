@@ -21,7 +21,7 @@ cluster.name: pi-es
 # Using sed for replace placeholder "pipipi"
 #
 node.name: pipipi
-node.master: true
+node.master: false
 node.data: true
 #
 # Add custom attributes to the node:
@@ -67,7 +67,7 @@ network.host: 0.0.0.0
 # Pass an initial list of hosts to perform discovery when new node is started:
 # The default list of hosts is ["127.0.0.1", "[::1]"]
 #
-discovery.zen.ping.unicast.hosts: ["192.168.0.110","192.168.0.111","192.168.0.112","192.168.0.113","192.168.0.114","192.168.0.115"]
+discovery.zen.ping.unicast.hosts: ["192.168.0.110","192.168.0.111","192.168.0.112","192.168.0.113","192.168.0.114","192.168.0.115","192.168.0.116"]
 #discovery.zen.ping.unicast.hosts: ["pi0","pi1","pi2","pi3","pi4","pi5"]
 #
 # Prevent the "split brain" by configuring the majority of nodes (total number of nodes / 2 + 1):
