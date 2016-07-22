@@ -22,13 +22,16 @@ mkdir /usr/share/logstash/config;
 cd /usr/share/logstash/config;
 wget https://raw.githubusercontent.com/Hooddominator/share/master/logstash.conf;
 cd /tmp/;
-git clone https://github.com/jnr/jffi.git
-cd jffi/;
-ant jar
+#### using a precompilled version from repo is faster !!
+## git clone https://github.com/jnr/jffi.git
+## cd jffi/;
+## ant jar
+wget https://raw.githubusercontent.com/Hooddominator/share/master/libjffi-1.2.so;
 mv /usr/share/logstash/vendor/jruby/lib/jni/arm-Linux/libjffi-1.2.so /usr/share/logstash/vendor/jruby/lib/jni/arm-Linux/libjffi-1.2.so.x;
-cp /tmp/jffi/build/jni/libjffi-1.2.so /usr/share/logstash/vendor/jruby/lib/jni/arm-Linux/
+mv /tmp/libjffi-1.2.so /usr/share/logstash/vendor/jruby/lib/jni/arm-Linux/
 chown -R elasticsearch:elasticsearch /usr/share/logstash/
-/usr/share/logstash/bin/logstash-plugin install logstash-input-http
+#### not needed coz "all-plugins" including this allready
+## /usr/share/logstash/bin/logstash-plugin install logstash-input-http
 cd /etc/supervisor/conf.d/
 wget https://raw.githubusercontent.com/Hooddominator/share/master/supervisor_logstash.conf;
 supervisorctl reread;
