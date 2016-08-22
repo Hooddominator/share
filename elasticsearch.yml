@@ -20,7 +20,7 @@ cluster.name: pi-es
 #
 # Using sed for replace placeholder "pipipi"
 #
-node.name: pipipi
+node.name: ${HOSTNAME}
 node.master: false
 node.data: true
 #
