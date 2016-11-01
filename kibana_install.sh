@@ -5,7 +5,7 @@ KIBANAVER="5.0.0"
 OSARCH="linux-x64"
 
 curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
-apt-get install -y nodejs
+apt-get install -y nodejs supervisor
 mkdir /usr/share/kibana
 mkdir /usr/share/kibana/logs
 cd /usr/share/kibana
