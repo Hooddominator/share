@@ -21,6 +21,7 @@ mv node/bin/node node/bin/xnode
 mv node/bin/npm node/bin/xnpm
 ln -s /usr/bin/node node/bin/node
 ln -s /usr/bin/npm node/bin/npm
+useradd elasticsearch
 chown -R elasticsearch:elasticsearch /usr/share/kibana
 wget https://raw.githubusercontent.com/Hooddominator/share/master/supervisor_kibana.conf
 mv supervisor_kibana.conf /etc/supervisor/conf.d/supervisor_kibana.conf
