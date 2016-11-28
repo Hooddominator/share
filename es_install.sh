@@ -1,6 +1,6 @@
 #!/bin/bash
 ## installs elasticsearch on RPi
-ESVER="2.3.3"
+ESVER=${1-"2.4.2"}
 
 aptitude update;
 aptitude install -y openjdk-8-jre-headless;
