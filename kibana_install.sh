@@ -1,6 +1,6 @@
 #!/bin/bash
 ## installs kibana on RPi
-KIBANAVER=${1-"4.6.3"}
+KIBANAVER=${1-"4.6.2"}
 OSARCH="linux-x64"
 
 curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
