@@ -3,7 +3,7 @@
 KIBANAVER=${1-"4.6.3"}
 OSARCH="linux-x86_64"
 
-curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 apt-get install -y nodejs supervisor
 mkdir /usr/share/kibana
 mkdir /usr/share/kibana/logs
