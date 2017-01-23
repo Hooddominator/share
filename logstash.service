@@ -1,0 +1,11 @@
+[Unit]
+Description=Logstash
+Documentation=https://www.elastic.co/products/logstash
+After=network.target
+ConditionPathExists=/usr/share/logstash/config/logstash.conf
+
+[Service]
+ExecStart=/usr/share/logstash/bin/logstash agent -f /usr/share/logstash/config/logstash.conf -r
+
+[Install]
+WantedBy=multi-user.target
