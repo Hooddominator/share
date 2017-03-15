@@ -3,7 +3,7 @@
 ## 
 LGSTVER="2.3.3";
 ALLPLUG="all-plugins-"
-
+ARCH=$(uname -m)
 
 aptitude install -y openjdk-8-jre-headless;
 mkdir /usr/share/logstash;
@@ -20,10 +20,12 @@ mkdir /usr/share/logstash/logs;
 mkdir /usr/share/logstash/config;
 cd /usr/share/logstash/config;
 wget https://raw.githubusercontent.com/Hooddominator/share/master/logstash.conf;
-cd /tmp/;
-wget https://raw.githubusercontent.com/Hooddominator/share/master/libjffi-1.2.so;
-mv /usr/share/logstash/vendor/jruby/lib/jni/arm-Linux/libjffi-1.2.so /usr/share/logstash/vendor/jruby/lib/jni/arm-Linux/libjffi-1.2.so.x;
-mv /tmp/libjffi-1.2.so /usr/share/logstash/vendor/jruby/lib/jni/arm-Linux/
+if ["$ARCH" == "armv71"]; then
+  cd /tmp/;
+  wget https://raw.githubusercontent.com/Hooddominator/share/master/libjffi-1.2.so;
+  mv /usr/share/logstash/vendor/jruby/lib/jni/arm-Linux/libjffi-1.2.so /usr/share/logstash/vendor/jruby/lib/jni/arm-Linux/libjffi-1.2.so.x;
+  mv /tmp/libjffi-1.2.so /usr/share/logstash/vendor/jruby/lib/jni/arm-Linux/
+fi
 chown -R elasticsearch:elasticsearch /usr/share/logstash/
 ## using systemd instead supervisor
 #cd /etc/supervisor/conf.d/
